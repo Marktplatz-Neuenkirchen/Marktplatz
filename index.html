@@ -35,7 +35,7 @@
     <h1>und Sitzmöbel für die älteren Besucher des Marktplatzes </h1>
     <h1>kaufen zu können. </h1>
     <h1> ----------------------------------------------------- </h1>
-    <h1>Bitte helft uns dabei!</h1>
+    <h1>Bitte helft uns dabei !!!!!!!!!</h1>
     <h1> ----------------------------------------------------- </h1>
     <hh1> Dabei unterstützt uns der <a href="https://www.heimatverein-neuenkirchen.de" target="_blank">Heimatverein Neuenkirchen</a> mit einem Spendenkonto.</h1>
 
@@ -50,13 +50,22 @@
     // Dein eigener "Schlüssel" für den Counter – Name frei wählbar
     const counterKey = "meine-homepage-counter";
 
+        // ...existing code...
     // Anfrage an CountAPI
     fetch(`https://api.countapi.xyz/hit/${counterKey}/visits`)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) throw new Error("Netzwerkfehler");
+        return response.json();
+      })
       .then(data => {
         document.getElementById("counter").innerText =
           `Diese Seite wurde schon ${data.value} Mal besucht 🚀`;
+      })
+      .catch(error => {
+        document.getElementById("counter").innerText =
+          "Besucherzähler konnte nicht geladen werden.";
+        console.error(error);
       });
-  </script>
+    // ...existing code...
 </body>
 </html>
