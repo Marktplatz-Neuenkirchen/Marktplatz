@@ -8,3 +8,52 @@
     <h1>Marktplatz</h1>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meine erste Homepage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    #counter {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #e74c3c;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Willkommen auf meiner Homepage 🎉</h1>
+  <p>Diese Seite läuft jetzt mit <b>GitHub Pages</b> – kostenlos und ohne Werbung!</p>
+
+  <!-- Besucherzähler -->
+  <div id="counter">Lade Besucherzähler...</div>
+
+  <script>
+    // Dein eigener "Schlüssel" für den Counter – Name frei wählbar
+    const counterKey = "meine-homepage-counter";
+
+    // Anfrage an CountAPI
+    fetch(`https://api.countapi.xyz/hit/${counterKey}/visits`)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("counter").innerText =
+          `Diese Seite wurde schon ${data.value} Mal besucht 🚀`;
+      });
+  </script>
+</body>
+</html>
