@@ -35,7 +35,18 @@
     <h1>und Sitzmöbel für die älteren Besucher des Marktplatzes </h1>
     <h1>kaufen zu können. </h1>
     <h1> ----------------------------------------------------- </h1>
-    <h1>Bitte helft uns dabei !!!!!!!!!</h1>
+    <h1>Bitte helft uns dabei !!!!!!!!!    const counterKey = "meine-homepage-counter-2025";    <script>
+      fetch("https://visits.deno.dev/MARKTPLATZSPENDEN")
+        .then(r => r.json())
+        .then(data => {
+          document.getElementById("counter").innerText =
+            `Diese Seite wurde schon ${data.count} Mal besucht 🚀`;
+        })
+        .catch(() => {
+          document.getElementById("counter").innerText =
+            "Besucherzähler konnte nicht geladen werden.";
+        });
+    </script></h1>
     <h1> ----------------------------------------------------- </h1>
     <hh1> Dabei unterstützt uns der <a href="https://www.heimatverein-neuenkirchen.de" target="_blank">Heimatverein Neuenkirchen</a> mit einem Spendenkonto.</h1>
 
