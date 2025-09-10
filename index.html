@@ -33,29 +33,5 @@
     <a href="https://www.heimatverein-neuenkirchen.de" target="_blank">Heimatverein Neuenkirchen</a> </h1>
 
 
-
-  <!-- Besucherzähler -->
-  <div id="counter">Lade Besucherzähler...</div>
-
-  <script>
-    // Dein eigener "Schlüssel" für den Counter – Name frei wählbar
-    const counterKey = "meine-homepage-counter";
-
-    // Anfrage an CountAPI
-    fetch(`https://api.countapi.xyz/hit/${counterKey}/visits`)
-      .then(response => {
-        if (!response.ok) throw new Error("Netzwerkfehler");
-        return response.json();
-      })
-      .then(data => {
-        document.getElementById("counter").innerText =
-          `Diese Seite wurde schon ${data.value} Mal besucht 🚀`;
-      })
-      .catch(error => {
-        document.getElementById("counter").innerText =
-          "Besucherzähler konnte nicht geladen werden.";
-        console.error(error);
-      });
-  </script>
 </body>
 </html>
